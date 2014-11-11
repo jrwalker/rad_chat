@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='//code.jquery.com/jquery-1.11.1.min.js')
+    script(src='https://cdn.socket.io/socket.io-1.0.0.js')
+    script(src='/js/index.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
+    title CivChat
+  body
+    h3.text-center Welcome to RadChat
+      h5.text-center A Dynamic Chat App Using Node, Express, and Socket.IO
+    div.container-fluid
+      .col-md-4.col-sm-4
+        form
+          input(type="text" maxlength='15' class="form-control input-lg" placeholder="What's your name?" rows="3" autocomplete="off")#name
+      .col-md-8.col-sm-9
+        form#messageForm
+          input(type="text" class="form-control input-lg" placeholder="Write a message here..." rows="3" autocomplete="off")#outgoingMessage
+      div.col-md-4
+        div.panel.panel-primary
+          div.panel-heading Users
+          div.panel-body  
+            ul.media-list
+              li.media
+                div.media-body
+                  div.media
+                    div.media-body#participants
+      div.col-md-8
+        div.panel.panel-info
+          div.panel-heading Conversation
+          div.panel-body
+              ul.media-list
+                li.media
+                  div.media-body
+                    div.media#messages
